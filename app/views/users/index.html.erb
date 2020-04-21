@@ -36,6 +36,23 @@
 					<tr>
 						<td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
 						<td><%= user.name%></td>
+						<%# フォロー機能-start- %>
+						<td>
+							<% if user.relationship_by?(current_user) %>
+								<li>
+									<%= link_to user_relationship_path(user), method: :delete do %>
+									<%= "フォロー外す" %> 
+									<% end %>
+								</li>
+							<% else %>
+								<li>
+									<%= link_to user_relationship_path(user), method: :post do %>
+									<%= "フォローする" %>  
+									<% end %>
+								</li>
+							<% end %>
+						</td>
+						<%# フォロー機能-finish- %>
 						<td><%= link_to "Show", user_path(user.id), class: "user_#{user.id}" %></td>
 					</tr>
 					<% end %>

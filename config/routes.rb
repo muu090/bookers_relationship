@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   root to: 'home#top'
   get 'home/about'
+  get 'users/:id/follows', to: 'users#follows', as: 'user_follows_index'
+  get 'users/:id/followers', to: 'users#followers', as: 'user_followers_index'
   
 end

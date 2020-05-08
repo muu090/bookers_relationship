@@ -266,6 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionview (>= 5.2.4)
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.4.1)
   byebug
